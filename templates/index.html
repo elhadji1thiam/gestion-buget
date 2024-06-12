@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil - Gestion de Budget{% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Date</th>
+                <th>Catégorie</th>
+                <th>Montant</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+            <tr>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.category }}</td>
+                <td>{{ entry.amount }}</td>
+                <td>{{ entry.type }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
